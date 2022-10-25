@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Clock</title>
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <link href="./css/photoGallery/icon.png" rel="icon">
+  </head>
+  <body>
+    <header>
+        <h1>Relógio OnClock</h1>
+    </header>
+    <main>
+      <section class="Display">
+        <h2 onclick="editDisplayDigital()">Digital</h2>
+        <div class="Interface" id="InterfaceDigital">
+          <h3 id="DisplayDigital"></h3>
+        </div>
+      </section>
+      <section class="Display">
+        <h2 onclick="editDisplayAnalog()">Analógico</h2>
+        <div class="Interface" id="InterfaceAnalog">
+          <div id="DisplayAnalog"></div>
+          <div id="Hours"></div>
+          <div id="Minutes"></div>
+          <div id="Seconds"></div>
+        </div>
+      </section>
+    </main>
+    <script src="./javascript/script.js"></script>
+  </body>
+</html>
