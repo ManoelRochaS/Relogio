@@ -1,103 +1,132 @@
 
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 body{
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-flow: column wrap;
     background: linear-gradient( 160deg,#0A0A0B, #215BF0);
-    color: white;
-    width: 100vw;
-    height: 100vh;
+    color: #ffffff;
 }
     header{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100vw;
-        height: 25vh;
+        font-family: Elevator;
+        width: 100%;
     }
-        header h1{
-            font-size: 6vw;
-            font-family: Elevator;
-        }
     main{
         width: 100%;
-        height: 75vh;
         display: flex;
-        flex-flow: row wrap;
     }
-        .Display{
-            width: 50%;
-            height: 75vh;
+        main section{
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
         }
-            .Display h2{
-                width: 22vw;
-                padding: 2vh 3vw;
-                font-family: transformers;
-                text-align: center;
-                font-size: 4vw;
-            }
-            .Display h2:hover{
-                border: 0.5vh solid white;
-                padding: 1.5vh calc(3vw - 0.5vh);
-            }
-            .Display .Interface{
-                width: 80%;
-                height: 50vh;
+            main section h2{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                position: relative;
-                display: none;
+                font-family: transformers; 
+                border: 0.5vh solid transparent;
             }
-                .Interface #DisplayDigital{
+            main section h2:hover{
+                border-color: #ffffff;
+            }
+            main section aside{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+                font-family: f-digital;
+            }
+            #DisplayAnalog{
+                border-radius: 100%;
+                border: 0.5vh solid #000000;
+                background-image: url(./photoGallery/relogio.png);
+                background-size: cover;
+            }
+            #Hours{
+                position:absolute;
+                background: #000000;
+                transform-origin: bottom;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.5vh;
+            }
+            #Minutes{
+                position: absolute;
+                background: #000000;
+                transform-origin: bottom;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.5vh;
+            }
+            #Seconds{
+                position: absolute;
+                transform-origin: bottom;
+                background: #ff0000;
+                border-radius: 0.1vh;
+            }
+
+@media (orientation: landscape){
+    header{
+        height: 25vh;
+    }
+        header h1{
+            font-size: 6vw;
+        }
+    main{
+        height: 75vh;
+        flex-flow: row wrap;
+    }  
+        main section{
+            height: 75vh;
+            width: 50%;
+        }
+            main section h2{
+                height: 19vh;
+                width: 50%;
+                font-size: 4vw;
+            }
+            main section aside{
+                height: 55vh;
+                width: 55vh;
+            }
+                section #displayText{
                     font-size: 4vw;
-                    font-family: fdigital;
                 }
-                .Interface #DisplayAnalog{
-                    width: 25vh;
-                    height: 25vh;
-                    border-radius: 100%;
-                    border: 0.5vh solid black;
-                    background-image: url(./photoGallery/relogio.png);
-                    background-size: cover;
+                #DisplayAnalog{
+                    width: 35vh;
+                    height: 35vh;
                 }
-                .Interface #Hours{
-                    position:absolute;
-                    background: black;
-                    transform-origin: bottom;
-                    border-radius: 0.5vh;
+                #Hours{
                     width: 1vh;
-                    height: 6vh;
-                    bottom: 25vh;
+                    height: 9vh;
+                    top: 18.5vh;
                 }
-                .Interface #Minutes{
-                    position: absolute;
-                    background: black;
-                    transform-origin: bottom;
-                    border-radius: 0.5vh;
+                #Minutes{
                     width: 1vh;
-                    height: 8vh;
-                    bottom: 25vh;
+                    height: 13vh;
+                    top:14.5vh;
                 }
-                .Interface #Seconds{
-                    position: absolute;
-                    transform-origin: bottom;
-                    background: red;
-                    border-radius: 0.1vh;
-                    width: 0.3vh;
-                    height: 10vh;
-                    bottom: 25vh;
+                #Seconds{
+                    width: 0.4vh;
+                    height: 16vh;
+                    top: 11.5vh;
                 }
 
-@media all and (orientation: portrait){
+}
 
+@media (orientation: portrait){
     header{
         height: 24vh;
     }
@@ -105,50 +134,45 @@ body{
             font-size: 15vw;
         }
     main{
-        width: 100%;
         height: 76vh;
         flex-flow: column wrap;
     }
-        .Display{
-            width: 100%;
+        main section{
             height: 38vh;
+            width: 100%;
         }
-            .Display h2{
-                padding: 2vw;
-                width: 60vw;
+            main section h2{
+                height: 7vh;
+                width: 50%;
                 font-size: 10vw;
+            }   
+            main section aside{
+                height: 30vh;
+                width: 40vh;
             }
-            .Display h2:hover{
-                border: 0.5vh solid white;
-                padding: calc(2vw - 0.5vh);
-            }
-            .Display .Interface{
-                width: 80%;
-                height: 20vh;
-            }
-                .Interface #DisplayDigital{
+                section #displayText{
                     font-size: 8vw;
                 }
-                .Interface #DisplayAnalog{
-                    width: 17vh;
-                    height: 17vh;
+                #DisplayAnalog{
+                    width: 25vh;
+                    height: 25vh;
                 }
-                .Interface #Hours{
-                    width: 0.7vh;
-                    height: 5vh;
-                    bottom: 10vh;
+                #Hours{
+                    width: 0.8vh;
+                    height: 6vh;
+                    top: 9vh;
                 }
-                .Interface #Minutes{
-                    width: 0.7vh;
-                    height: 7vh;
-                    bottom: 10vh;
+                #Minutes{
+                    width: 0.8vh;
+                    height: 9.5vh;
+                    top: 5.6vh;
                 }
-                .Interface #Seconds{
-                    border-radius: 0.1vh;
+                #Seconds{
                     width: 0.3vh;
-                    height: 8vh;
-                    bottom: 10vh;
+                    height: 11.5vh;
+                    top: 3.6vh;
                 }
+
 }
 
 @font-face {
@@ -160,6 +184,6 @@ body{
     src: url('./fontText/transformers.ttf');
 }
 @font-face {
-    font-family: fdigital;
+    font-family: f-digital;
     src: url('./fontText/f-digital.TTF');
 }
